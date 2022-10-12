@@ -1,12 +1,24 @@
 import "./App.css";
-
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
 function App() {
   return (
-    <div>
-      <div className="h-screen bg-black w-full flex items-center justify-center">
-        <h1 className="text-8xl text-white font-bold text-center">
-          Coming Soon...
-        </h1>
+    <div className="bg-[#191919] text-white">
+      <div>
+        <Navbar />
+      </div>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="*" element={<div>404 error</div>} />
+        </Routes>
       </div>
     </div>
   );
